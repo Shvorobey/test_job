@@ -9,10 +9,11 @@ $opening_square_bracket=0;
 $closing_square_bracket=0;
 $opening_brace=0;
 $closing_brace=0;
+
+if (strlen($phrase)>0){    // проверка на наличие проверяемой строки
 if ($array[0]==')'or $array[0]==']' or $array[0]=='}' or $array[$size-1]=='(' or $array[$size-1]=='['or $array[$size-1]=='{')
     exit("Проверте правильность введенной строки"); // проверка первого и последнего символов
 
-if (strlen($phrase)>0){ // проверка на наличие проверяемой строки
     for($i=0; $i<$size; $i++) {
         if($array[$i]=='(') $opening_bracket++; // подсчет количества различного вида скобок
         if($array[$i]==')') $closing_bracket++;
