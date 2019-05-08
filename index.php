@@ -1,7 +1,7 @@
 <?php
 
 function check($phrase) {
-    $result = 'Верно';
+    $result = 'Верно'; // инициализация переменной результата
     $pairs = [
         ')' => '(',
         ']' => '[',
@@ -12,19 +12,19 @@ function check($phrase) {
   $size=strlen($phrase); // вычисляем длинну строки
     if ($size>0) {  // проверка наличия строки
         for ($i = 0; $i < $size; $i++) {
-            $var = substr($phrase, $i, 1);
-            if (!array_key_exists($var, $pairs) || end($array) !== $pairs[$var]) {
-                array_push($array, $var);
+            $var = substr($phrase, $i, 1); // получаем подстроку из проверяемой строки - в каждой иттерации на 1 длиннее
+            if (!array_key_exists($var, $pairs) || end($array) !== $pairs[$var]) { // проверка нет или нет
+                array_push($array, $var); // массив увеличивается
             } else {
-                array_pop($array);
+                array_pop($array); // массив уменьшается
             }
         }
-        if (count($array) > 0) {
+        if (count($array) > 0) { // если в массиве что-то есть, то строка не верная
             $result = 'Не верно';
         }
     }
     else $result = "Ошибка ввода строки.";
-    return $result;
+    return $result; // возвращаем результат
 }
 echo check(")[(]");
 
