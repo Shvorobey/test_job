@@ -20,7 +20,7 @@ function check($phrase) {
             }
         }
         if (count($array) > 0) {
-            $res = 'Не верно';
+            $result = 'Не верно';
         }
     }
     return $result;
