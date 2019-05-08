@@ -8,9 +8,9 @@ function check($phrase) {
         '}' => '{',
     ];
     $array = [];
-    $phrase = preg_replace('~[^\(\)\[\]\{\}]~', '', $phrase);
-  $size=strlen($phrase);
-    if ($size>0) {
+    $phrase = preg_replace('~[^\(\)\[\]\{\}]~', '', $phrase); // оставляем только скобки
+  $size=strlen($phrase); // вычисляем длинну строки
+    if ($size>0) {  // проверка наличия строки
         for ($i = 0; $i < $size; $i++) {
             $var = substr($phrase, $i, 1);
             if (!array_key_exists($var, $pairs) || end($array) !== $pairs[$var]) {
@@ -23,6 +23,7 @@ function check($phrase) {
             $result = 'Не верно';
         }
     }
+    else $result = "Ошибка ввода строки.";
     return $result;
 }
 echo check(")[(]");
