@@ -8,7 +8,7 @@ function check($phrase) {
         '}' => '{',
     ];
     $array = [];
-    $phrase = preg_replace('~[^\(\)\{\}\[\]]~', '', $phrase);
+    $phrase = preg_replace('~[^\(\)\[\]\{\}]~', '', $phrase);
   $size=strlen($phrase);
     if ($size>0) {
         for ($i = 0; $i < $size; $i++) {
@@ -25,7 +25,7 @@ function check($phrase) {
     }
     return $result;
 }
-
+echo check(")[(]");
 
 //$phrase = '32323233((({{[[}}]])){}'; // проверяемое выражение
 //$array = str_split ($phrase); // преобразование строки в массив
