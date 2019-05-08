@@ -12,7 +12,7 @@ function check($phrase) {
   $size=strlen($phrase); // вычисляем длинну строки
     if ($size>0) {  // проверка наличия строки
         for ($i = 0; $i < $size; $i++) {
-            $var = substr($phrase, $i, 1); // получаем подстроку из проверяемой строки - в каждой иттерации на 1 длиннее
+            $var = substr($phrase, $i, 1); // получаем подстроку из проверяемой строки - перебираем символы
             if (!array_key_exists($var, $pairs) || end($array) !== $pairs[$var]) { // проверка нет или нет
                 array_push($array, $var); // массив увеличивается
             } else {
